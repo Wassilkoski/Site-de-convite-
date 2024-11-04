@@ -20,12 +20,15 @@
             padding: 10px 20px;
             font-size: 16px;
         }
+        #btn-nao {
+            position: absolute;
+        }
     </style>
 </head>
 <body>
     <h1>Você quer sair comigo?</h1>
     <button onclick="respostaSim()">Sim</button>
-    <button onclick="respostaNao()">Não</button>
+    <button id="btn-nao" onmouseover="moverBotao()">Não</button>
 
     <script>
         function respostaSim() {
@@ -38,8 +41,15 @@
             }
         }
 
-        function respostaNao() {
-            alert("Ops! Essa opção não está funcionando. Tente novamente.");
+        function moverBotao() {
+            // Gera posições aleatórias na tela para o botão "Não"
+            const largura = window.innerWidth - 100; // margem de 100px
+            const altura = window.innerHeight - 50;  // margem de 50px
+            const posX = Math.floor(Math.random() * largura);
+            const posY = Math.floor(Math.random() * altura);
+            const botaoNao = document.getElementById("btn-nao");
+            botaoNao.style.left = `${posX}px`;
+            botaoNao.style.top = `${posY}px`;
         }
     </script>
 </body>
