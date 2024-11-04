@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer Sair Comigo?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você quer sair comigo?</h1>
+    <button onclick="respostaSim()">Sim</button>
+    <button onclick="respostaNao()">Não</button>
+
+    <script>
+        function respostaSim() {
+            let repetir = confirm("Tem certeza que quer sair comigo?");
+            if (repetir) {
+                alert("Legal! Vamos marcar!");
+            } else {
+                alert("Vamos tentar de novo...");
+                location.reload();
+            }
+        }
+
+        function respostaNao() {
+            alert("Ops! Essa opção não está funcionando. Tente novamente.");
+        }
+    </script>
+</body>
+</html>
